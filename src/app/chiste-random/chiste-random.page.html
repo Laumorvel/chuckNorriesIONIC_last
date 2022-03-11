@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><a [routerLink]="['/home']"
+      ><ion-icon style="color: black" name="caret-back-outline">
+      </ion-icon
+    ></a>  Random joke</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="centrar">
+  <ion-button class="botonChiste" (click)="getRandomJoke()"
+    >RANDOM JOKE</ion-button
+  >
+
+  <ion-card *ngIf="clicado">
+    <ion-card-header> </ion-card-header>
+
+    <ion-card-content>
+      <div>
+        <img src="{{img}}" />
+      </div>
+      {{joke}}
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

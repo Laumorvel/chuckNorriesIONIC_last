@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title
+      ><a routerLink="/home"
+        ><ion-icon style="color: black" name="caret-back-outline"></ion-icon></a
+      >Favourites</ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Settings</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Update or delete your favourite jokes. <br>
+      Be creative! Make Chuck proud
+    </ion-card-content>
+  </ion-card>
+  <div *ngIf="show">
+    <ion-card>
+      <ion-list>
+        <ion-list-header color="light">
+          <ion-label>Your favourite jokes</ion-label>
+        </ion-list-header>
+        <ion-item *ngFor="let joke of favouriteJokes" (click)="showJoke(joke)">
+          <ion-thumbnail>
+            <img src="{{joke.icon_url}}" />
+          </ion-thumbnail>
+          <ion-label> {{ joke.value }} </ion-label>
+          <ion-icon name="information-circle-outline"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
+</ion-content>
